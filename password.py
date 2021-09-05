@@ -11,3 +11,6 @@ class User:
             username= new username.
             password = New password.
         """
+
+        self.username= username
+        self.password = password
