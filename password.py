@@ -37,3 +37,17 @@ class Credentials:
         '''
 
         Credentials.password_list.remove(self)
+    
+
+    def test_save_multiple_password(self):
+            '''
+            test_save_multiple_passwords to check if we can save multiple credential
+            objects to our password_list
+            '''
+            self.new_credential.save_password()
+            test_credentials = User("username","password") # new user login and credentials 
+            test_credentials.save_credentials()
+            self.assertEqual(len(Credentials.password_list),2)
+
+if __name__ == '__main__':
+    unittest.main()
