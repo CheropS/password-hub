@@ -28,4 +28,12 @@ class Credentials:
         save_password method saves password objects into password_list
         '''
 
-        Credentials.contact_list.append(self)
+        Credentials.password_list.append(self)
+
+    def delete_password(self):
+
+        '''
+        delete_password method deletes a saved password from the password_list
+        '''
+
+        Credentials.password_list.remove(self)
