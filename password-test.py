@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from password import User
 from password import Credentials
 
@@ -81,7 +82,6 @@ class TestUser(unittest.TestCase):
             self.new_credentials.delete_credentials()# Deleting a credential object
             self.assertEqual(len(Credentials.password_list),1)
     
-
-
+    
 if __name__ == '__main__':
     unittest.main()

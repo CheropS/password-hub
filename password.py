@@ -1,3 +1,5 @@
+import pyperclip
+
 class User:
     """
     Class that generates a login username and password for existing users
@@ -57,6 +59,7 @@ class Credentials:
         '''
 
         Credentials.password_list.remove(self)
+        
 
     @classmethod
     def display_credentials(cls):
@@ -65,6 +68,6 @@ class Credentials:
         '''
         return cls.password_list
     
-    
+   
 
 
