@@ -57,6 +57,13 @@ class Credentials:
         '''
 
         Credentials.password_list.remove(self)
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the saved credentials list
+        '''
+        return cls.password_list
     
     
 
