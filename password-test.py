@@ -47,6 +47,11 @@ class TestUser(unittest.TestCase):
         self.new_credentials.save_credentials() # saving the new contact
         self.assertEqual(len(Credentials.password_list),1)
 
-    
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Credentials.password_list = []
+
 if __name__ == '__main__':
     unittest.main()
