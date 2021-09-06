@@ -59,8 +59,8 @@ class TestUser(unittest.TestCase):
             objects to our password_list
             '''
             self.new_credentials.save_credentials()
-            test_contact = Credentials("Test","user") # new contact
-            test_contact.save_credentials()
+            test_credentials = Credentials("Test","user") # new contact
+            test_credentials.save_credentials()
             self.assertEqual(len(Credentials.password_list),2)
     
     def test_display_all_credentials(self):
@@ -69,6 +69,19 @@ class TestUser(unittest.TestCase):
         '''
 
         self.assertEqual(Credentials.display_credentials(),Credentials.password_list)
+
+    def test_delete_credentials(self):
+            '''
+            test_delete_credentials to test if we can remove a credential from our credential list
+            '''
+            self.new_credentials.save_credentials()
+            test_credentials = Credentials("Test","user") # new credentials 
+            test_credentials.save_credentials()
+
+            self.new_credentials.delete_credentials()# Deleting a credential object
+            self.assertEqual(len(Credentials.password_list),1)
+    
+
 
 if __name__ == '__main__':
     unittest.main()

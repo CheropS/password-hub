@@ -50,10 +50,10 @@ class Credentials:
 
         Credentials.password_list.append(self)
 
-    def delete_password(self):
+    def delete_credentials(self):
 
         '''
-        delete_password method deletes a saved password from the password_list
+        delete_credentials method deletes a saved password from the password_list
         '''
 
         Credentials.password_list.remove(self)
