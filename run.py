@@ -68,8 +68,25 @@ def main():
                                     print("You dont seem to have any credentials saved yet")
                                     print('\n')
 
+                    elif short_code == "del":
+                        print ("Enter credential to delete")
+                        search_number=int(input())
+                        credentials_found=find_credentials(search_number)
+                        if credentials_found(search_number):
+                            print("Are you sure you want to delete: Y or N")
+                            response=input().lower()
+                            if response == "y":
+                                del_credentials=(credentials_found)
+                                print ("Credential deleted")
+                            else:
+                                print("Credential not found")
+
                     elif short_code == "ex":
                             print("Bye .......")
                             break
                     else:
                             print("I really didn't get that. Please use the short codes")
+
+if __name__ == '__main__':
+
+    main()
