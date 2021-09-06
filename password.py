@@ -22,14 +22,14 @@ class Credentials:
     this is the class that contains user credentials for its users
     """
     password_list = [] #empty password list
-    
+
     def __init__(self, login_name, pword):
         """
         init method that helps us define our objects
 
         Args: 
-            username= new username.
-            password = New password.
+            lname= new login_name.
+            pword = New password.
         """
 
         self.lname= login_name
@@ -58,14 +58,6 @@ class Credentials:
 
         Credentials.password_list.remove(self)
     
-    def test_save_multiple_password(self):
-            '''
-            test_save_multiple_passwords to check if we can save multiple credentials 
-            objects to our password_list
-            '''
-            self.new_credential.save_password()
-            test_password = Credentials("username","password") # new contact
-            test_password.save_password()
-            self.assertEqual(len(Credentials.contact_list),2)
+    
 
 

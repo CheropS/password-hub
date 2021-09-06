@@ -14,7 +14,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_username = User("Sharry","Kenyan") # create user object
+        self.new_user = User("Sharry","Kenyan") # create user object
     
 
     def setUp(self):
@@ -23,24 +23,23 @@ class TestUser(unittest.TestCase):
         '''
         self.new_credentials = Credentials("Mike","winning") # create credentials object
 
-
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_username.username,"Sharry")
-        self.assertEqual(self.new_username.password,"Kenyan")
+        self.assertEqual(self.new_user.username,"Sharry")
+        self.assertEqual(self.new_user.password,"Kenyan")
 
-    def test_save_multiple_password(self):
-            '''
-            test_save_multiple_passwords to check if we can save multiple credential
-            objects to our password_list
-            '''
-            self.new_credentials.save_credentials()
-            test_credentials = Credentials("username","password") # new user login and credentials 
-            test_credentials.save_credentials()
-            self.assertEqual(len(Credentials.password_list),2)
+    def test_init(self):
+        '''
+        test_init test case to test if the credentials object is initialized properly
+        '''
 
+        self.assertEqual(self.new_credentials.lname,"Mike")
+        self.assertEqual(self.new_credentials.pword,"winning")
+
+
+    
 if __name__ == '__main__':
     unittest.main()
